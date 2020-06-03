@@ -145,10 +145,6 @@ class Figgy < Formula
         sha256 "f0018613c7a0d19df3240c2a913849786f21b6539b9f23d85ce4067489dfacfa"
     end
 
-    resource "pyhcl" do
-        url "https://files.pythonhosted.org/packages/91/b0/dd4f1d01b77be3b66d9f550ed958b68fa553764be1d27c7d604906c06b42/pyhcl-0.4.4.tar.gz"
-        sha256 "2d9b9dcdf1023d812bfed561ba72c99104c5b3f52e558d595130a44ce081b003"
-    end
 
     resource "pyotp" do
         url "https://files.pythonhosted.org/packages/f7/15/395c4945ea6bc37e8811280bb675615cb4c2b2c1cd70bdc43329da91a386/pyotp-2.3.0.tar.gz"
@@ -158,11 +154,6 @@ class Figgy < Formula
     resource "python-dateutil" do
         url "https://files.pythonhosted.org/packages/be/ed/5bbc91f03fa4c839c4c7360375da77f9659af5f7086b7a7bdda65771c8e0/python-dateutil-2.8.1.tar.gz"
         sha256 "73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"
-    end
-
-    resource "pytz" do
-        url "https://files.pythonhosted.org/packages/f4/f6/94fee50f4d54f58637d4b9987a1b862aeb6cd969e73623e02c5c00755577/pytz-2020.1.tar.gz"
-        sha256 "c35965d010ce31b23eeb663ed3cc8c906275d6be1a34393a1d73a41febf4a048"
     end
 
     resource "requests" do
@@ -215,20 +206,12 @@ class Figgy < Formula
         sha256 "edbc2b718b4db6cdf393eefe3a420183947d6aa312505ce6754516f458ff8830"
     end
 
-    resource "websocket_client" do
-        url "https://files.pythonhosted.org/packages/8b/0f/52de51b9b450ed52694208ab952d5af6ebbcbce7f166a48784095d930d8c/websocket_client-0.57.0.tar.gz"
-        sha256 "d735b91d6d1692a6a181f2a8c9e0238e5f6373356f561bb9dc4c7af36f452010"
-    end
 
     resource "zipp" do
         url "https://files.pythonhosted.org/packages/ce/8c/2c5f7dc1b418f659d36c04dec9446612fc7b45c8095cc7369dd772513055/zipp-3.1.0.tar.gz"
         sha256 "c599e4d75c98f6798c509911d08a22e6c021d074469042177c8c86fb92eefd96"
     end
 
-    resource "zipstream" do
-        url "https://files.pythonhosted.org/packages/1a/a4/58f0709cef999db1539960aa2ae77100dc800ebb8abb7afc97a1398dfb2f/zipstream-1.1.4.tar.gz"
-        sha256 "2ef24b9150c93429b172750c4890b5ab28c1317892e11727afeff986ad2a3506"
-    end
 
     def install
         virtualenv_install_with_resources

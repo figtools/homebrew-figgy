@@ -3,12 +3,12 @@ class Figgy < Formula
 
     desc "This is the CLI that accompanies the `figgy` configuration management framework."
     homepage "https://figgy.dev"
-    url "https://files.pythonhosted.org/packages/b4/0e/a065f4e9d309a06c20ed148b886243ab4dca3ab084cca99e5e857266ed7c/figgy-cli-0.0.3a0.tar.gz"
-    sha256 "f8e7f2c9277025c884048bbeebf183e84068554719878289f47e46f176c3d1ae"
+    url "https://files.pythonhosted.org/packages/9d/f5/f0ec0ce11404d9b7a4e205b46851752e0d13d6a0ebdeaca27bfb69b4499a/figgy-cli-0.0.4a0.tar.gz"
+    sha256 "dd54fbfa189e3114764a2f85b8aea6804605b814fb2407a631443c5591102fad"
 
     bottle :unneeded
 
-    depends_on "python@3.8"
+    depends_on "python@3.7"
 
     resource "aws-google-auth" do
         url "https://files.pythonhosted.org/packages/71/8f/aedfa502bfef36a60bc7a7cb3b72a06717ed2ac853ad0bdee7c480828d39/aws-google-auth-0.0.35.tar.gz"

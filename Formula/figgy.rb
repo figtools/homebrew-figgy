@@ -11,11 +11,6 @@ class Figgy < Formula
     depends_on "python@3.8"
 
 
-    resource "headlines" do
-        url "https://codeload.github.com/feluxe/headlines/legacy.tar.gz/0.0.3"
-        sha256 "ed4fb0e14e8e0e7ebade99b2eee5b516e17dba3e4fa135f296c8d6ce12db0ddd"
-    end
-
     resource "pyyaml" do
         url "https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz"
         sha256 "b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d"

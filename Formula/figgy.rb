@@ -10,6 +10,12 @@ class Figgy < Formula
 
     depends_on "python@3.8"
 
+
+    resource "pyyaml" do
+        url "https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz"
+        sha256 "b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d"
+    end
+
     resource "aws-google-auth" do
         url "https://files.pythonhosted.org/packages/71/8f/aedfa502bfef36a60bc7a7cb3b72a06717ed2ac853ad0bdee7c480828d39/aws-google-auth-0.0.35.tar.gz"
         sha256 "cd4d0ac28dd05ec587037c37a86e8b67c16c93028388121d3df215f3ab13e857"
@@ -156,10 +162,6 @@ class Figgy < Formula
         sha256 "73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"
     end
 
-    resource "pyyaml" do
-        url "https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz"
-        sha256 "b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d"
-    end
 
     resource "requests" do
         url "https://files.pythonhosted.org/packages/f5/4f/280162d4bd4d8aad241a21aecff7a6e46891b905a4341e7ab549ebaf7915/requests-2.23.0.tar.gz"

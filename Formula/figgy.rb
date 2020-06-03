@@ -11,7 +11,7 @@ class Figgy < Formula
     depends_on "python@3.8"
 
     resource "buildlib" do
-        url "https://github.com/feluxe/buildlib/tarball/3.0.0"
+        url "https://codeload.github.com/feluxe/buildlib/legacy.tar.gz/3.0.0"
         sha256 "8a24adb7022e74afdb5fbd989e76ed5b4e4ef88bbbff761deebdeb03723c9caa"
     end
 

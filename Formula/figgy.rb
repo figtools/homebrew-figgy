@@ -10,6 +10,11 @@ class Figgy < Formula
 
     depends_on "python@3.8"
 
+    resource "buildlib" do
+        url "https://github.com/feluxe/buildlib/tarball/3.0.0"
+        sha256 "8a24adb7022e74afdb5fbd989e76ed5b4e4ef88bbbff761deebdeb03723c9caa"
+    end
+
     resource "aws-google-auth" do
         url "https://files.pythonhosted.org/packages/71/8f/aedfa502bfef36a60bc7a7cb3b72a06717ed2ac853ad0bdee7c480828d39/aws-google-auth-0.0.35.tar.gz"
         sha256 "cd4d0ac28dd05ec587037c37a86e8b67c16c93028388121d3df215f3ab13e857"
@@ -206,10 +211,6 @@ class Figgy < Formula
         sha256 "c599e4d75c98f6798c509911d08a22e6c021d074469042177c8c86fb92eefd96"
     end
 
-    resource "buildlib" do
-        url "https://github.com/feluxe/buildlib/tarball/3.0.0"
-        sha256 "8a24adb7022e74afdb5fbd989e76ed5b4e4ef88bbbff761deebdeb03723c9caa"
-    end
 
     def install
         virtualenv_install_with_resources

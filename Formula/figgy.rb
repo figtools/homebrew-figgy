@@ -3,13 +3,18 @@ class Figgy < Formula
 
     desc "This is the CLI that accompanies the `figgy` configuration management framework."
     homepage "https://figgy.dev"
-    url "https://files.pythonhosted.org/packages/e4/ae/23da48b89108f9906576fe9588c4c97f7547e08e302671eaad52cb5b459e/figgy-cli-0.0.5a0.tar.gz"
-    sha256 "91e038de11594ffb65e8ad4b22077a8054bcb5dc62b4ebaa589c66a7be352e33"
+    url "https://files.pythonhosted.org/packages/27/88/4b3e33252a42de6e0e5bf08d4d38ef1667e53b11da4404f91e18b6db7821/figgy-cli-0.0.6a0.tar.gz"
+    sha256 "cec2bf131d68d1c6e047822d481409c870332753fe854c906ae2735da62a71be"
 
     bottle :unneeded
 
     depends_on "python@3.8"
 
+
+    resource "headlines" do
+        url "https://codeload.github.com/feluxe/headlines/legacy.tar.gz/0.0.3"
+        sha256 "ed4fb0e14e8e0e7ebade99b2eee5b516e17dba3e4fa135f296c8d6ce12db0ddd"
+    end
 
     resource "pyyaml" do
         url "https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz"

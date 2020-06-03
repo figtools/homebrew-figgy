@@ -10,11 +10,6 @@ class Figgy < Formula
 
     depends_on "python@3.8"
 
-    resource "buildlib" do
-        url "https://codeload.github.com/feluxe/buildlib/legacy.tar.gz/3.0.0"
-        sha256 "8a24adb7022e74afdb5fbd989e76ed5b4e4ef88bbbff761deebdeb03723c9caa"
-    end
-
     resource "aws-google-auth" do
         url "https://files.pythonhosted.org/packages/71/8f/aedfa502bfef36a60bc7a7cb3b72a06717ed2ac853ad0bdee7c480828d39/aws-google-auth-0.0.35.tar.gz"
         sha256 "cd4d0ac28dd05ec587037c37a86e8b67c16c93028388121d3df215f3ab13e857"
@@ -33,6 +28,11 @@ class Figgy < Formula
     resource "botocore" do
         url "https://files.pythonhosted.org/packages/ff/6b/1d6afcfe57bffd1fe874bd623efa52994f57cbaaebd971bde8f44cc126f7/botocore-1.16.21.tar.gz"
         sha256 "7bd43e2fdf579875e3d3073e25699f5e524cc36a1748c4aee7c9c626e3760b2b"
+    end
+
+    resource "buildlib" do
+        url "https://codeload.github.com/feluxe/buildlib/legacy.tar.gz/3.0.0"
+        sha256 "8a24adb7022e74afdb5fbd989e76ed5b4e4ef88bbbff761deebdeb03723c9caa"
     end
 
     resource "certifi" do
@@ -154,6 +154,11 @@ class Figgy < Formula
     resource "python-dateutil" do
         url "https://files.pythonhosted.org/packages/be/ed/5bbc91f03fa4c839c4c7360375da77f9659af5f7086b7a7bdda65771c8e0/python-dateutil-2.8.1.tar.gz"
         sha256 "73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"
+    end
+
+    resource "pyyaml" do
+        url "https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz"
+        sha256 "b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d	"
     end
 
     resource "requests" do

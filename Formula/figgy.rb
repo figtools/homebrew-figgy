@@ -3,8 +3,8 @@ class Figgy < Formula
 
     desc "This is the CLI that accompanies the `figgy` configuration management framework."
     homepage "https://figgy.dev"
-    url "https://files.pythonhosted.org/packages/98/03/64b40a260a1490d31929a3d6751c9323bcf5d4ab3c75e9ef922f54ce649c/figgy-cli-0.0.8a0.tar.gz"
-    sha256 "f22778d1a8ac30b5e8248d76cc2ad1fe7ae4f478d25bb8d536c938d20ccc2b05"
+    url "https://files.pythonhosted.org/packages/ba/31/024191a8dde0cf250e38c68710811786061eb7a8dd07a61ac2ebb2a527ed/figgy-cli-0.0.9a0.tar.gz"
+    sha256 "5faaa31a0e1f5078a5df3b9cd004f7773827a3d0966d4e4275c11e35fa8195ee"
 
     bottle :unneeded
 
@@ -19,11 +19,6 @@ class Figgy < Formula
     resource "oyaml" do
         url "https://files.pythonhosted.org/packages/72/77/f7882a0165d771651ac709de1b7f779c44c754d1929f81cb0648424f5e66/oyaml-0.9.tar.gz"
         sha256 "03990464021274031c2905c3ee5c1345f318b30d0f247ea4368c44921e2b1d67"
-    end
-
-    resource "aws-google-auth" do
-        url "https://files.pythonhosted.org/packages/71/8f/aedfa502bfef36a60bc7a7cb3b72a06717ed2ac853ad0bdee7c480828d39/aws-google-auth-0.0.35.tar.gz"
-        sha256 "cd4d0ac28dd05ec587037c37a86e8b67c16c93028388121d3df215f3ab13e857"
     end
 
     resource "beautifulsoup4" do
@@ -213,6 +208,11 @@ class Figgy < Formula
         sha256 "3018294ebefce6572a474f0604c2021e33b3fd8006ecd11d62107a5d2a963527"
     end
 
+    resource "u2flib" do
+        url "https://files.pythonhosted.org/packages/4d/3d/0997fe8196f5be24b7015708a0744a0ef928c4fb3c8bc820dc3328208ef2/python-u2flib-host-3.0.3.tar.gz"
+        sha256 "ab678b9dc29466a779efcaa2f0150dce35059a7d17680fc26057fa599a53fc0a"
+    end
+
     resource "wcwidth" do
         url "https://files.pythonhosted.org/packages/97/23/3c0fde825b1c6a015e7360e105da2bdf3034fe670ede8f03d21194c1b910/wcwidth-0.2.3.tar.gz"
         sha256 "edbc2b718b4db6cdf393eefe3a420183947d6aa312505ce6754516f458ff8830"
@@ -221,11 +221,6 @@ class Figgy < Formula
     resource "zipp" do
         url "https://files.pythonhosted.org/packages/ce/8c/2c5f7dc1b418f659d36c04dec9446612fc7b45c8095cc7369dd772513055/zipp-3.1.0.tar.gz"
         sha256 "c599e4d75c98f6798c509911d08a22e6c021d074469042177c8c86fb92eefd96"
-    end
-
-    resource "Pillow" do
-        url "https://files.pythonhosted.org/packages/ce/ef/e793f6ffe245c960c42492d0bb50f8d14e2ba223f1922a5c3c81569cec44/Pillow-7.1.2.tar.gz"
-        sha256 "a0b49960110bc6ff5fead46013bcb8825d101026d466f3a4de3476defe0fb0dd"
     end
 
 

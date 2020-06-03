@@ -120,7 +120,6 @@ class Figgy < Formula
         sha256 "fc65a43959d153d0114afe13997d439c22823a27cefceb5ff35c2178c6784c0c"
     end
 
-
     resource "prompt-toolkit" do
         url "https://files.pythonhosted.org/packages/69/19/3aa4bf17e1cbbdfe934eb3d5b394ae9a0a7fb23594a2ff27e0fdaf8b4c59/prompt_toolkit-3.0.5.tar.gz"
         sha256 "563d1a4140b63ff9dd587bda9557cffb2fe73650205ab6f4383092fb882e7dc8"
@@ -207,13 +206,16 @@ class Figgy < Formula
         sha256 "c599e4d75c98f6798c509911d08a22e6c021d074469042177c8c86fb92eefd96"
     end
 
+    resource "buildlib" do
+        url "https://github.com/feluxe/buildlib/tarball/3.0.0"
+        sha256 "8a24adb7022e74afdb5fbd989e76ed5b4e4ef88bbbff761deebdeb03723c9caa"
+    end
 
     def install
         virtualenv_install_with_resources
     end
 
     test do
-        output = shell_output("#{bin}figgy --version")
-        assert output.include? "Version", "Unable to validate successful install. Figgy"
+        system "#{bin}/figgy", "--version"
     end
 end

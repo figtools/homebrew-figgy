@@ -3,8 +3,8 @@ class Figgy < Formula
 
     desc "This is the CLI that accompanies the `figgy` configuration management framework."
     homepage "https://figgy.dev"
-    url "https://files.pythonhosted.org/packages/a9/6b/54c99bbcac85ebb71a2e9c91bb1aca6c6222d1cc2037c5c5faac4b2136a7/figgy-cli-0.0.1a0.tar.gz"
-    sha256 "6b071412295616aea428ae3a64ec53e4fbd17efff100548a15e2dae9d640c0a2"
+    url "https://files.pythonhosted.org/packages/b4/0e/a065f4e9d309a06c20ed148b886243ab4dca3ab084cca99e5e857266ed7c/figgy-cli-0.0.3a0.tar.gz"
+    sha256 "f8e7f2c9277025c884048bbeebf183e84068554719878289f47e46f176c3d1ae"
 
     bottle :unneeded
 
@@ -205,7 +205,6 @@ class Figgy < Formula
         url "https://files.pythonhosted.org/packages/97/23/3c0fde825b1c6a015e7360e105da2bdf3034fe670ede8f03d21194c1b910/wcwidth-0.2.3.tar.gz"
         sha256 "edbc2b718b4db6cdf393eefe3a420183947d6aa312505ce6754516f458ff8830"
     end
-
 
     resource "zipp" do
         url "https://files.pythonhosted.org/packages/ce/8c/2c5f7dc1b418f659d36c04dec9446612fc7b45c8095cc7369dd772513055/zipp-3.1.0.tar.gz"

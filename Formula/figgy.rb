@@ -1,11 +1,10 @@
 class Figgy < Formula
     include Language::Python::Virtualenv
 
-    desc: "This is the CLI that accompanies the `figgy` configuration management framework."
-    homepage: "https://figgy.dev"
-    url: "https://files.pythonhosted.org/packages/a9/6b/54c99bbcac85ebb71a2e9c91bb1aca6c6222d1cc2037c5c5faac4b2136a7/figgy-cli-0.0.1a0.tar.gz"
-    sha256: "6b071412295616aea428ae3a64ec53e4fbd17efff100548a15e2dae9d640c0a2"
-
+    desc "This is the CLI that accompanies the `figgy` configuration management framework."
+    homepage "https://figgy.dev"
+    url "https://files.pythonhosted.org/packages/a9/6b/54c99bbcac85ebb71a2e9c91bb1aca6c6222d1cc2037c5c5faac4b2136a7/figgy-cli-0.0.1a0.tar.gz"
+    sha256 "6b071412295616aea428ae3a64ec53e4fbd17efff100548a15e2dae9d640c0a2"
 
     bottle :unneeded
 

@@ -8,7 +8,7 @@ class Figgy < Formula
 
     bottle :unneeded
 
-    depends_on "python@3.7"
+    depends_on "python@3.8"
 
     resource "aws-google-auth" do
         url "https://files.pythonhosted.org/packages/71/8f/aedfa502bfef36a60bc7a7cb3b72a06717ed2ac853ad0bdee7c480828d39/aws-google-auth-0.0.35.tar.gz"

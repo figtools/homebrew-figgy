@@ -3,8 +3,8 @@ class Figgy < Formula
 
     desc "This is the CLI that accompanies the `figgy` configuration management framework."
     homepage "https://figgy.dev"
-    url "https://files.pythonhosted.org/packages/ba/31/024191a8dde0cf250e38c68710811786061eb7a8dd07a61ac2ebb2a527ed/figgy-cli-0.0.9a0.tar.gz"
-    sha256 "5faaa31a0e1f5078a5df3b9cd004f7773827a3d0966d4e4275c11e35fa8195ee"
+    url "https://files.pythonhosted.org/packages/1a/fa/50d9518dda05452e1b0887a8107ee8efae15705c8a51f5a0f8b7c2e58408/figgy-cli-0.0.10a0.tar.gz"
+    sha256 "37542cecfde780b8be43c6848923fb303f8647ad398551079604d96edbf0c6cd"
 
     bottle :unneeded
 

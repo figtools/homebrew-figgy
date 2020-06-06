@@ -34,7 +34,7 @@ jobs:
         fi
 
     - name: Commit changes
-      if: steps.check.outputs.updated == "true"
+      if: steps.check.outputs.updated == 'true'cip 
       uses: EndBug/add-and-commit@v4
       with:
         author_name: Jordan

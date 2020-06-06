@@ -18,8 +18,6 @@ jobs:
         python-version: 3.8
     - name: Install dependencies
       run: |
-        echo "[user]\n    name = Jordan Mance\n    email = jordan@figgy.dev" > ~/.gitconfig
-
         python -m pip install --upgrade pip
         pip install setuptools twine pip wheel
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
@@ -28,7 +26,7 @@ jobs:
       id: check
       run: |
         output=$(python update_formula.py)
-        echo $output | grep "Updating figgy.rb"
+        echo $output | grep "Updating figgy.rb" && echo "::set-output name=updated::true"
         if [[ $? -eq 0 ]]
         then
           echo "::set-output name=updated::true"

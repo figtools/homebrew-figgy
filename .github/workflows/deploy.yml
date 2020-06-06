@@ -24,5 +24,22 @@ jobs:
         pip install setuptools twine pip wheel
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+    - name: Check for update
+      id: check
+      run: |
         output=$(python update_formula.py)
-        echo $output | grep "Updating figgy.rb" && git add -A && git commit -m "Updating version." && git push
+        echo $output | grep "Updating figgy.rb"
+        if [[ $? -eq 0 ]]
+          echo "::set-output name=updated::true"
+        fi
+
+    - name: Commit changes
+      if: steps.check.outputs.updated == "true"
+      uses: EndBug/add-and-commit@v4
+      with:
+        author_name: Jordan
+        author_email: jordan@figgy.dev
+        message: "Releasing new version"
+        add: "*"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

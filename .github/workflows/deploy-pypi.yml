@@ -1,0 +1,27 @@
+name: Python application
+
+on:
+  schedule:
+    - cron:  '*/15 * * * *'
+  watch:
+    types: [started]
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+
+        python -m pip install --upgrade pip
+        pip install setuptools twine pip wheel
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+        output=$(python update_formula.py)
+        echo $output | grep "Updating figgy.rb" && git add -A && git commit -m "Updating version." && git push

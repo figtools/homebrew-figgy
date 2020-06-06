@@ -1,10 +1,10 @@
-class Figgy < Formula
+BREW_TEMPLATE = """class Figgy < Formula
     include Language::Python::Virtualenv
 
     desc "This is the CLI that accompanies the `figgy` configuration management framework."
     homepage "https://figgy.dev"
-    url "https://files.pythonhosted.org/packages/44/cb/bb8f977119d5e9ca5cdbbbc24f12c4a86d86b4e0ad1a3e858e4289d11c79/figgy-cli-0.0.13a0.tar.gz"
-    sha256 "b041188a230f0e57d43804bfd892bb476b81d827197dc8345678044eeedf567f"
+    url "%%URL%%"
+    sha256 "%%SHA%%"
 
     bottle :unneeded
 
@@ -234,4 +234,4 @@ class Figgy < Formula
     test do
         system "#{bin}/figgy", "--version"
     end
-end
+end"""

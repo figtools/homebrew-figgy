@@ -1,0 +1,1 @@
+NEVER UPDATE figgy.rb directly. It is created by `update_formula.py`

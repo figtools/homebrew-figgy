@@ -30,6 +30,7 @@ jobs:
         output=$(python update_formula.py)
         echo $output | grep "Updating figgy.rb"
         if [[ $? -eq 0 ]]
+        then
           echo "::set-output name=updated::true"
         fi
 

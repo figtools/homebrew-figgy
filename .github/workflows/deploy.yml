@@ -26,7 +26,7 @@ jobs:
       id: check
       run: |
         output=$(python update_formula.py)
-        echo $output | grep "Updating figgy.rb" && echo "::set-output name=updated::true"
+        echo $output | grep "Updating figgy.rb" && echo "::set-output name=updated::true" || true
 
     - name: Commit changes
       if: steps.check.outputs.updated == 'true'

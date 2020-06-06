@@ -21,7 +21,7 @@ data = result.text
 tar_match = re.search(r'.*href=\"(https://files.pythonhosted.org/.*figgy-cli-[0-9]+\.[0-9]+\.[0-9]+\w*\.tar\.gz)\".*', data, re.MULTILINE)
 download_url = tar_match.group(1)
 
-sha_match = re.search(r'.*SHA256<.th>\s*<td>\s*<code>(\w+)</code>.*', data, re.MULTILINE)
+sha_match = re.search(r'.*SHA256<.th>\s*<td>\s*<code>(\w+)</code>.*', data, re.DOTALL)
 sha = sha_match.group(1)
 
 version_match = re.search(r'.*release__version\">\s*([0-9]+\.[0-9]+\.[0-9]+\w*)\s+<span.*', data, re.MULTILINE)

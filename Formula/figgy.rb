@@ -3,8 +3,8 @@ class Figgy < Formula
 
     desc "This is the CLI that accompanies the `figgy` configuration management framework."
     homepage "https://figgy.dev"
-    url "https://files.pythonhosted.org/packages/8a/00/27c9e36188ab7126fbeb247aaeee7da07130c335a5f2fd369dcacfa9f326/figgy-cli-0.0.25a0.tar.gz"
-    sha256 "b88bfeef6a15b8843863bcc35691e1b1771eb825d306a69405de7e2598a5693e"
+    url "https://files.pythonhosted.org/packages/71/a9/a8129a611d72aa0e33d0c3ea173a1c2f5be603afe699f0045b8b20783f84/figgy-cli-0.0.27a0.tar.gz"
+    sha256 "53f04eeaaddb1836c12dc91654710bc96f962923a60a1b9aed1b0636528e86a0"
 
     bottle :unneeded
 
@@ -136,8 +136,8 @@ class Figgy < Formula
     end
 
     resource "prompt-toolkit" do
-        url "https://files.pythonhosted.org/packages/d9/a5/4b2dd1a05403e34c3ba0d9c00f237c01967c0a4f59a427c9b241129cdfe4/prompt_toolkit-2.0.7.tar.gz"
-        sha256 "fd17048d8335c1e6d5ee403c3569953ba3eb8555d710bfc548faf0712666ea39"
+        url "https://files.pythonhosted.org/packages/69/19/3aa4bf17e1cbbdfe934eb3d5b394ae9a0a7fb23594a2ff27e0fdaf8b4c59/prompt_toolkit-3.0.5.tar.gz"
+        sha256 "563d1a4140b63ff9dd587bda9557cffb2fe73650205ab6f4383092fb882e7dc8"
     end
 
     resource "ptyprocess" do
@@ -145,9 +145,9 @@ class Figgy < Formula
         sha256 "923f299cc5ad920c68f2bc0bc98b75b9f838b93b599941a6b63ddbc2476394c0"
     end
 
-    resource "pycryptodome" do
-        url "https://files.pythonhosted.org/packages/69/2a/298b2689bee8e88c502c7e85ba1c9f07c7e182ea91c705c449f693056c9f/pycryptodome-3.9.7.tar.gz"
-        sha256 "f1add21b6d179179b3c177c33d18a2186a09cc0d3af41ff5ed3f377360b869f2"
+    resource "pycrypto" do
+        url "https://files.pythonhosted.org/packages/60/db/645aa9af249f059cc3a368b118de33889219e0362141e75d4eaf6f80f163/pycrypto-2.6.1.tar.gz"
+        sha256 "f2ce1e989b272cfcb677616763e0a2e7ec659effa67a88aa92b3a65528f60a3c"
     end
 
     resource "pydantic" do

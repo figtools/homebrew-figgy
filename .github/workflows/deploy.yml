@@ -29,7 +29,6 @@ jobs:
         echo $output | grep "Updating figgy.rb" && echo "::set-output name=updated::true" || true
 
     - name: Commit changes
-      if: steps.check.outputs.updated == 'true'
       uses: EndBug/add-and-commit@v4
       with:
         author_name: Jordan

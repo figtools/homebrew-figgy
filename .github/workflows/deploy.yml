@@ -48,4 +48,5 @@ jobs:
         pip install awscli
         mkdir -p ~/.aws
         echo "[default]\nregion = us-east-1\noutput = json" > ~/.aws/config
-        bash release.sh
+        version=$(python get_version.py)
+        bash release.sh ${version}

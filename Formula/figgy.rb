@@ -3,8 +3,8 @@ class Figgy < Formula
 
     desc "This is the CLI that accompanies the `figgy` configuration management framework."
     homepage "https://figgy.dev"
-    url "https://files.pythonhosted.org/packages/71/a9/a8129a611d72aa0e33d0c3ea173a1c2f5be603afe699f0045b8b20783f84/figgy-cli-0.0.27a0.tar.gz"
-    sha256 "53f04eeaaddb1836c12dc91654710bc96f962923a60a1b9aed1b0636528e86a0"
+    url "https://files.pythonhosted.org/packages/ac/80/6838a017e92fbc226a29e2c21568aaf223a1b75378d2e67102c9f3cc5041/figgy-cli-0.0.28a0.tar.gz"
+    sha256 "6b777fbbaf80d9f9301fd441d1f1d5edadc396ca20f4b656f085ff0b4c37c39c"
 
     bottle :unneeded
 
@@ -154,7 +154,6 @@ class Figgy < Formula
         url "https://files.pythonhosted.org/packages/97/24/f8e05f16433b3b5332b3e2cf9b4625692c09432c7a18aa1d735fecb80904/pydantic-1.5.1.tar.gz"
         sha256 "f0018613c7a0d19df3240c2a913849786f21b6539b9f23d85ce4067489dfacfa"
     end
-
 
     resource "pyotp" do
         url "https://files.pythonhosted.org/packages/f7/15/395c4945ea6bc37e8811280bb675615cb4c2b2c1cd70bdc43329da91a386/pyotp-2.3.0.tar.gz"

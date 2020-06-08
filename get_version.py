@@ -9,4 +9,8 @@ data = result.text
 version_match = re.search(r'.*release__version\">\s*([0-9]+\.[0-9]+\.[0-9]+\w*)\s+<span.*', data, re.MULTILINE)
 pypi_version = version_match.group(1)
 
-print(pypi_version)
+# print(pypi_version)
+
+# Remove suffix integer.
+figgy_version = pypi_version.rstrip('0123456789')
+print(figgy_version)

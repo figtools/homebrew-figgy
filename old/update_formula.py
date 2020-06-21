@@ -1,14 +1,9 @@
 import re
 import requests
-from utils import *
-import hashlib
 from template import BREW_TEMPLATE
-import hashlib
-
-architectures = ['catalina', 'mojave', 'high_sierra']
-BOTTLE_VERSION = 1
 
 # Release homebrew version if new version is found on PYPI.
+
 # Parse current figgy version.
 with open('Formula/figgy.rb') as file:
     content = file.read()
@@ -21,9 +16,9 @@ result = requests.get('https://pypi.org/project/figgy-cli/#files')
 if result.status_code != 200:
     raise ValueError("Invalid status code returned from PYPI, cannot lookup latest version.")
 
+
 data = result.text
-tar_match = re.search(r'.*href=\"(https://files.pythonhosted.org/.*figgy-cli-[0-9]+\.[0-9]+\.[0-9]+\w*\.tar\.gz)\".*',
-                      data, re.MULTILINE)
+tar_match = re.search(r'.*href=\"(https://files.pythonhosted.org/.*figgy-cli-[0-9]+\.[0-9]+\.[0-9]+\w*\.tar\.gz)\".*', data, re.MULTILINE)
 download_url = tar_match.group(1)
 
 sha_match = re.search(r'.*SHA256<.th>\s*<td>\s*<code>(\w+)</code>.*', data, re.DOTALL)
@@ -35,24 +30,10 @@ pypi_version = version_match.group(1)
 print(f"PYPI Url: {download_url}")
 print(f"PYPI SHA: {sha}")
 print(f"PYPI Version: {pypi_version}")
-version = pypi_version.rstrip('ab')
-
-url = f"https://www.figgy.dev/releases/cli/{version}/darwin/figgy.tar.gz"
-dest = '/tmp/figgy.tar.gz'
-download_file(url, dest)
-sha256 = get_hash(dest)
-
-print(f'Got SHA256 for {dest}: {sha256}')
-
-for arch in architectures:
-    create_bottle(version, arch)
 
 if pypi_version != current_version:
     print("Updating figgy.rb to latest version")
-    contents = BREW_TEMPLATE\
-        .replace('%%URL%%', download_url)\
-        .replace('%%SHA%%', sha)\
-        .replace('%%BOTTLE_VERSION%%', BOTTLE_VERSION)
+    contents = BREW_TEMPLATE.replace('%%URL%%', download_url).replace('%%SHA%%', sha)
 
     with open('Formula/figgy.rb', 'w') as file:
         file.write(contents)

@@ -23,14 +23,10 @@ tar_match = re.search(r'.*href=\"(https://files.pythonhosted.org/.*figgy-cli-[0-
                       data, re.MULTILINE)
 download_url = tar_match.group(1)
 
-sha_match = re.search(r'.*SHA256<.th>\s*<td>\s*<code>(\w+)</code>.*', data, re.DOTALL)
-sha = sha_match.group(1)
-
-version_match = re.search(r'.*release__version\">\s*([0-9]+\.[0-9]+\.[0-9]+\w*)\s+<span.*', data, re.MULTILINE)
+version_match = re.search(r'.*figgy-cli-([0-9]+\.[0-9]+\.[0-9]+\w*)\.tar\.gz', download_url)
 pypi_version = version_match.group(1)
 
 print(f"PYPI Url: {download_url}")
-print(f"PYPI SHA: {sha}")
 print(f"PYPI Version: {pypi_version}")
 
 if re.match(r'^[0-9]+\.[0-9]+\.[0-9]+[a-zA-z]0$', pypi_version):

@@ -23,14 +23,10 @@ tar_match = re.search(r'.*href=\"(https://files.pythonhosted.org/.*figgy-cli-[0-
                       data, re.MULTILINE)
 download_url = tar_match.group(1)
 
-sha_match = re.search(r'.*SHA256<.th>\s*<td>\s*<code>(\w+)</code>.*', data, re.DOTALL)
-sha = sha_match.group(1)
-
 version_match = re.search(r'.*release__version\">\s*([0-9]+\.[0-9]+\.[0-9]+\w*)\s+<span.*', data, re.MULTILINE)
 pypi_version = version_match.group(1)
 
 print(f"PYPI Url: {download_url}")
-print(f"PYPI SHA: {sha}")
 print(f"PYPI Version: {pypi_version}")
 
 if re.match(r'^[0-9]+\.[0-9]+\.[0-9]+[a-zA-z]0$', pypi_version):
@@ -55,7 +51,7 @@ download_url = f"https://www.figgy.dev/releases/cli/{version}/darwin/figgy.tar.g
 print(f"Updating figgy.rb to latest version: {version} with url: {download_url}")
 contents = BREW_TEMPLATE\
     .replace('%%URL%%', download_url)\
-    .replace('%%SHA%%', sha)\
+    .replace('%%SHA%%', sha256)\
     .replace('%%BOTTLE_VERSION%%', str(BOTTLE_VERSION))
 
 with open('Formula/figgy.rb', 'w+') as file:

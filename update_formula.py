@@ -52,7 +52,7 @@ for arch in architectures:
 
 download_url = f"https://www.figgy.dev/releases/cli/{version}/darwin/figgy.tar.gz"
 # if pypi_version != current_version:
-print("Updating figgy.rb to latest version")
+print(f"Updating figgy.rb to latest version: {version} with url: {download_url}")
 contents = BREW_TEMPLATE\
     .replace('%%URL%%', download_url)\
     .replace('%%SHA%%', sha)\

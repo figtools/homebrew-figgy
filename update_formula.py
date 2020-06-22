@@ -48,7 +48,7 @@ sha256 = get_hash(dest)
 print(f'Got SHA256 for {dest}: {sha256}')
 
 for arch in architectures:
-    create_bottle(version, arch)
+    create_bottle(version, arch, BOTTLE_VERSION)
 
 
 # if pypi_version != current_version:

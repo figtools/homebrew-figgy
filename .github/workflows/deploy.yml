@@ -29,12 +29,11 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
-        python update_formula.py
         output=$(python update_formula.py)
         echo $output | grep "Updating figgy.rb" && echo "::set-output name=updated::true" || true
 
     - name: Commit changes
-#      if: steps.check.outputs.updated == 'true'
+      if: steps.check.outputs.updated == 'true'
       uses: EndBug/add-and-commit@v4
       with:
         author_name: Jordan
@@ -45,7 +44,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Release
-#      if: steps.check.outputs.updated == 'true'
+      if: steps.check.outputs.updated == 'true'
       env:
         AWS_REGION: us-east-1
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

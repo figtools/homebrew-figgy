@@ -1,9 +1,6 @@
 import re
-import requests
 from utils import *
-import hashlib
 from template import BREW_TEMPLATE
-import hashlib
 
 architectures = ['catalina', 'mojave', 'high_sierra']
 BOTTLE_VERSION = 1
@@ -53,7 +50,6 @@ print(f'Got SHA256 for {dest}: {sha256}')
 for arch in architectures:
     create_bottle(version, arch)
 
-print("Updating figgy.rb to latest version")
 
 # if pypi_version != current_version:
 print("Updating figgy.rb to latest version")
@@ -64,6 +60,6 @@ contents = BREW_TEMPLATE\
 
 with open('Formula/figgy.rb', 'w+') as file:
     file.write(contents)
-
+#
 # else:
 #     print("Homebrew version is the same as latest version for figgy. Not updating.")

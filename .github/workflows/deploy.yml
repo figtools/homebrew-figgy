@@ -24,6 +24,9 @@ jobs:
 
     - name: Check for update
       id: check
+      AWS_REGION: us-east-1
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
         output=$(python update_formula.py)
         echo $output | grep "Updating figgy.rb" && echo "::set-output name=updated::true" || true

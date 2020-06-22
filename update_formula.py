@@ -9,7 +9,7 @@ BOTTLE_VERSION = 1
 # Parse current figgy version.
 with open('Formula/figgy.rb') as file:
     content = file.read()
-    match = re.search(r'.*releases/cli/([0-9]+.[0-9]+\w*)/darwin/.*', content, re.MULTILINE)
+    match = re.search(r'.*releases/cli/(.*)/darwin/.*', content, re.MULTILINE)
     current_version = match.group(1)
 
 print(f"Found current version: {current_version}")

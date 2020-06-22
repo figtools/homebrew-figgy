@@ -50,7 +50,7 @@ print(f'Got SHA256 for {dest}: {sha256}')
 for arch in architectures:
     create_bottle(version, arch, BOTTLE_VERSION)
 
-
+download_url = f"https://www.figgy.dev/releases/cli/{version}/darwin/figgy.tar.gz"
 # if pypi_version != current_version:
 print("Updating figgy.rb to latest version")
 contents = BREW_TEMPLATE\

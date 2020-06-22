@@ -62,7 +62,7 @@ contents = BREW_TEMPLATE\
     .replace('%%SHA%%', sha)\
     .replace('%%BOTTLE_VERSION%%', BOTTLE_VERSION)
 
-with open('Formula/figgy.rb', 'w') as file:
+with open('Formula/figgy.rb', 'w+') as file:
     file.write(contents)
 
 # else:

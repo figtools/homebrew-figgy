@@ -56,7 +56,7 @@ print("Updating figgy.rb to latest version")
 contents = BREW_TEMPLATE\
     .replace('%%URL%%', download_url)\
     .replace('%%SHA%%', sha)\
-    .replace('%%BOTTLE_VERSION%%', BOTTLE_VERSION)
+    .replace('%%BOTTLE_VERSION%%', str(BOTTLE_VERSION))
 
 with open('Formula/figgy.rb', 'w+') as file:
     file.write(contents)

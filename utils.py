@@ -2,7 +2,7 @@ import hashlib
 import requests
 import boto3
 
-s3_rsc = boto3.resource('s3')
+s3_rsc = boto3.resource('s3', region="us-east-1")
 FIGGY_BUCKET = 'figgy-website'
 
 

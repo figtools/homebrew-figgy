@@ -43,6 +43,8 @@ else:
 
 url = f"https://www.figgy.dev/releases/cli/{version}/darwin/figgy.tar.gz"
 dest = '/tmp/figgy.tar.gz'
+
+print(f"Downloading URL: {url}")
 download_file(url, dest)
 sha256 = get_hash(dest)
 

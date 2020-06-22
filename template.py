@@ -5,7 +5,7 @@ BREW_TEMPLATE = """class Figgy < Formula
     sha256 "%%SHA%%"
     
     bottle do
-        root_url "https://www.figgy.dev"
+        root_url "https://www.figgy.dev/bottles"
         rebuild %%BOTTLE_VERSION%%
         sha256 "%%SHA%%" => :catalina
         sha256 "%%SHA%%" => :mojave

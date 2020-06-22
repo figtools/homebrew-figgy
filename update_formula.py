@@ -55,15 +55,15 @@ for arch in architectures:
 
 print("Updating figgy.rb to latest version")
 
-if pypi_version != current_version:
-    print("Updating figgy.rb to latest version")
-    contents = BREW_TEMPLATE\
-        .replace('%%URL%%', download_url)\
-        .replace('%%SHA%%', sha)\
-        .replace('%%BOTTLE_VERSION%%', BOTTLE_VERSION)
+# if pypi_version != current_version:
+print("Updating figgy.rb to latest version")
+contents = BREW_TEMPLATE\
+    .replace('%%URL%%', download_url)\
+    .replace('%%SHA%%', sha)\
+    .replace('%%BOTTLE_VERSION%%', BOTTLE_VERSION)
 
-    with open('Formula/figgy.rb', 'w') as file:
-        file.write(contents)
+with open('Formula/figgy.rb', 'w') as file:
+    file.write(contents)
 
-else:
-    print("Homebrew version is the same as latest version for figgy. Not updating.")
+# else:
+#     print("Homebrew version is the same as latest version for figgy. Not updating.")

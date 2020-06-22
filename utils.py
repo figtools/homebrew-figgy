@@ -25,4 +25,4 @@ def create_bottle(version: str, architecture: str, bottle_version: int):
     new_obj = s3_rsc.Object(FIGGY_BUCKET, f'bottles/figgy-{brewified_version}.{architecture}.bottle.{bottle_version}.tar.gz')
     print(f"New obj: {new_obj} from obj: releases/cli/{brewified_version}/darwin/figgy.tar.gz")
     result = new_obj.copy_from(CopySource=f'figgy-website/releases/cli/{version}/darwin/figgy.tar.gz')
-    print(f'Bottle create result: {result}')
+    # print(f'Bottle create result: {result}')

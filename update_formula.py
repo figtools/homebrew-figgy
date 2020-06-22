@@ -46,7 +46,7 @@ print(f'Got SHA256 for {dest}: {sha256}')
 for arch in architectures:
     create_bottle(version, arch, BOTTLE_VERSION)
 
-if pypi_version != current_version:
+if version != current_version:
     print(f"Updating figgy.rb to latest version: {version} with url: {download_url}")
     contents = BREW_TEMPLATE\
         .replace('%%URL%%', download_url)\

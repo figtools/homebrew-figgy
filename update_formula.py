@@ -36,7 +36,7 @@ print(f"PYPI Url: {download_url}")
 print(f"PYPI SHA: {sha}")
 print(f"PYPI Version: {pypi_version}")
 
-if re.match(r'^[0-9]+\.[0-9+\.[0-9]+[a-zA-z]0$', pypi_version):
+if re.match(r'^[0-9]+\.[0-9]+\.[0-9]+[a-zA-z]0$', pypi_version):
     version = pypi_version.rstrip('01234567890')
 else:
     version = pypi_version

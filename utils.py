@@ -11,6 +11,7 @@ def get_hash(filename: str):
         bytes = f.read()  # read entire file as bytes
         readable_hash = hashlib.sha256(bytes).hexdigest()
         print(readable_hash)
+        return readable_hash
 
 
 def download_file(remote_url: str, local_path: str):

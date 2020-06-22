@@ -12,6 +12,9 @@ with open('Formula/figgy.rb') as file:
     match = re.search(r'.*releases/cli/(.*)/darwin/.*', content, re.MULTILINE)
     current_version = match.group(1)
 
+with open(f'Formula/{current_version}/figgy.rb', 'w+') as file:
+    file.write(content)
+
 print(f"Found current version: {current_version}")
 result = requests.get('https://pypi.org/project/figgy-cli/#files')
 

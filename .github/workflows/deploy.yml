@@ -51,7 +51,5 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
         pip install awscli
-        mkdir -p ~/.aws
-        echo "[default]\nregion = us-east-1\noutput = json" > ~/.aws/config
         version=$(python get_version.py)
         bash release.sh ${version}

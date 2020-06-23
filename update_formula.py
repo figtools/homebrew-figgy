@@ -1,4 +1,5 @@
 import re
+import os
 from utils import *
 from template import BREW_TEMPLATE
 
@@ -11,6 +12,8 @@ with open('Formula/figgy.rb') as file:
     content = file.read()
     match = re.search(r'.*releases/cli/(.*)/darwin/.*', content, re.MULTILINE)
     current_version = match.group(1)
+
+os.makedirs(f'Formula/{current_version}', exist_ok=True)
 
 with open(f'Formula/{current_version}/figgy.rb', 'w+') as file:
     file.write(content)
@@ -45,7 +48,7 @@ if version != current_version:
     download_file(download_url, dest)
     sha256 = get_hash(dest)
     print(f'Got SHA256 for {dest}: {sha256}')
-    
+
     for arch in architectures:
         create_bottle(version, arch, BOTTLE_VERSION)
 

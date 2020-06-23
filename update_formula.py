@@ -37,23 +37,22 @@ if re.match(r'^[0-9]+\.[0-9]+\.[0-9]+[a-zA-z]0$', pypi_version):
 else:
     version = pypi_version
 
-download_url = f"https://www.figgy.dev/releases/cli/{version}/darwin/figgy.tar.gz"
-dest = '/tmp/figgy.tar.gz'
-
-print(f"Downloading URL: {download_url}")
-download_file(download_url, dest)
-sha256 = get_hash(dest)
-
-print(f'Got SHA256 for {dest}: {sha256}')
-
-for arch in architectures:
-    create_bottle(version, arch, BOTTLE_VERSION)
-
 if version != current_version:
+    download_url = f"https://www.figgy.dev/releases/cli/{version}/darwin/figgy.tar.gz"
+    dest = '/tmp/figgy.tar.gz'
+
+    print(f"Downloading URL: {download_url}")
+    download_file(download_url, dest)
+    sha256 = get_hash(dest)
+    print(f'Got SHA256 for {dest}: {sha256}')
+    
+    for arch in architectures:
+        create_bottle(version, arch, BOTTLE_VERSION)
+
     print(f"Updating figgy.rb to latest version: {version} with url: {download_url}")
-    contents = BREW_TEMPLATE\
-        .replace('%%URL%%', download_url)\
-        .replace('%%SHA%%', sha256)\
+    contents = BREW_TEMPLATE \
+        .replace('%%URL%%', download_url) \
+        .replace('%%SHA%%', sha256) \
         .replace('%%BOTTLE_VERSION%%', str(BOTTLE_VERSION))
 
     with open('Formula/figgy.rb', 'w+') as file:

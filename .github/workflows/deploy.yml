@@ -42,8 +42,26 @@ jobs:
         add: "*"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # Parse version
+        VERSION=$(python get_version.py)
+        echo "Setting release version to $VERSION"
+        echo "::set-env name=RELEASE_VERSION::$VERSION"
 
-    - name: Release
+    - name: Create Release
+      if: steps.check.outputs.updated == 'true'
+      id: create_release
+      uses: actions/create-release@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ env.RELEASE_VERSION }}
+        release_name: Release ${{ env.RELEASE_VERSION }}
+        body: ${{ steps.prep.outputs.changelog }}
+        draft: false
+        prerelease: true
+
+    - name: Update Figgy API Latest Version
       if: steps.check.outputs.updated == 'true'
       env:
         AWS_REGION: us-east-1
@@ -52,4 +70,4 @@ jobs:
       run: |
         pip install awscli
         version=$(python get_version.py)
-        bash release.sh ${version}
+        bash release.sh ${{ env.RELEASE_VERSION }}

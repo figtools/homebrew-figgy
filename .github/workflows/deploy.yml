@@ -42,6 +42,11 @@ jobs:
         add: "*"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+    - name: Set Version Var
+      if: steps.check.outputs.updated == 'true'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         # Parse version
         VERSION=$(python get_version.py)

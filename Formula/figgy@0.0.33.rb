@@ -1,4 +1,4 @@
-class Figgy < Formula
+class FiggyAT0.0.33 < Formula
     desc "This is the CLI that accompanies the `figgy` configuration management framework."
     homepage "https://figgy.dev"
     url "https://www.figgy.dev/releases/cli/0.0.33/darwin/figgy.tar.gz"

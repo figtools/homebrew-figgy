@@ -13,9 +13,10 @@ with open('Formula/figgy.rb') as file:
     match = re.search(r'.*releases/cli/(.*)/darwin/.*', content, re.MULTILINE)
     current_version = match.group(1)
 
-os.makedirs(f'Formula/{current_version}', exist_ok=True)
+content = content.replace('class Figgy', f'class FiggyAT{current_version.replace(".", "")}')
+[copy_versioned_objects(current_version, arc, BOTTLE_VERSION) for arc in architectures]
 
-with open(f'Formula/{current_version}/figgy.rb', 'w+') as file:
+with open(f'Formula/{current_version}/figgy@{current_version}.rb', 'w+') as file:
     file.write(content)
 
 print(f"Found current version: {current_version}")

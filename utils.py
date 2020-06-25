@@ -20,9 +20,17 @@ def download_file(remote_url: str, local_path: str):
         file.write(r.content)
 
 
+def copy_versioned_objects(version: str, architecture: str, bottle_version: int):
+    new_obj = s3_rsc.Object(FIGGY_BUCKET,
+                            f'bottles/figgy@{version}-{version}.{architecture}.bottle.{bottle_version}.tar.gz')
+    print(f"New obj: {new_obj} from obj: releases/cli/{version}/darwin/figgy.tar.gz")
+    result = new_obj.copy_from(CopySource=f'figgy-website/releases/cli/{version}/darwin/figgy.tar.gz')
+
+
 def create_bottle(version: str, architecture: str, bottle_version: int):
     brewified_version = version.rstrip('ab')  # brew install does this automatically for some reason.
-    new_obj = s3_rsc.Object(FIGGY_BUCKET, f'bottles/figgy-{brewified_version}.{architecture}.bottle.{bottle_version}.tar.gz')
+    new_obj = s3_rsc.Object(FIGGY_BUCKET,
+                            f'bottles/figgy-{brewified_version}.{architecture}.bottle.{bottle_version}.tar.gz')
     print(f"New obj: {new_obj} from obj: releases/cli/{brewified_version}/darwin/figgy.tar.gz")
     result = new_obj.copy_from(CopySource=f'figgy-website/releases/cli/{version}/darwin/figgy.tar.gz')
     # print(f'Bottle create result: {result}')

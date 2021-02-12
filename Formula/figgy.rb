@@ -1,15 +1,15 @@
 class Figgy < Formula
     desc "This is the CLI that accompanies the `figgy` configuration management framework."
     homepage "https://figgy.dev"
-    url "https://www.figgy.dev/releases/cli/0.1.6/darwin/figgy.tar.gz"
-    sha256 "ce2403bd147aab7748a31226ecd63e30b5b5bee9c0ab07195685c5c04eb99543"
+    url "https://www.figgy.dev/releases/cli/0.1.7/darwin/figgy.tar.gz"
+    sha256 "eb67ae03abf932b8fe2eae37c73313522af700366978b40bf63378246a02ee85"
     
     bottle do
         root_url "https://www.figgy.dev/bottles"
         rebuild 1
-        sha256 "ce2403bd147aab7748a31226ecd63e30b5b5bee9c0ab07195685c5c04eb99543" => :catalina
-        sha256 "ce2403bd147aab7748a31226ecd63e30b5b5bee9c0ab07195685c5c04eb99543" => :mojave
-        sha256 "ce2403bd147aab7748a31226ecd63e30b5b5bee9c0ab07195685c5c04eb99543" => :high_sierra
+        sha256 "eb67ae03abf932b8fe2eae37c73313522af700366978b40bf63378246a02ee85" => :catalina
+        sha256 "eb67ae03abf932b8fe2eae37c73313522af700366978b40bf63378246a02ee85" => :mojave
+        sha256 "eb67ae03abf932b8fe2eae37c73313522af700366978b40bf63378246a02ee85" => :high_sierra
     end
 
   # depends_on "cmake" => :build

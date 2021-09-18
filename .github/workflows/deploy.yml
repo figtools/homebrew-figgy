@@ -42,7 +42,7 @@ jobs:
         add: "*"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
     - name: Set Version Var
       if: steps.check.outputs.updated == 'true'
       env:
@@ -50,8 +50,10 @@ jobs:
       run: |
         # Parse version
         VERSION=$(python get_version.py)
+        CLOUD_VERSION_REQUIREMENT=$(curl -s https://raw.githubusercontent.com/figtools/figgy/master/REQUIRES_CLI_VERSION)
         echo "Setting release version to $VERSION"
         echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
+        echo "CLOUD_VERSION_REQUIREMENT=$CLOUD_VERSION_REQUIREMENT" >> $GITHUB_ENV
 
     - name: Create Release
       if: steps.check.outputs.updated == 'true'
@@ -75,4 +77,4 @@ jobs:
       run: |
         pip install awscli
         version=$(python get_version.py)
-        bash release.sh ${{ env.RELEASE_VERSION }}
+        bash release.sh ${{ env.RELEASE_VERSION }} ${{ env.CLOUD_VERSION_REQUIREMENT }}

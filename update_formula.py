@@ -3,7 +3,7 @@ import os
 from utils import *
 from template import BREW_TEMPLATE
 
-architectures = ['catalina', 'mojave', 'high_sierra']
+architectures = ['catalina', 'mojave', 'high_sierra', 'big_sur']
 BOTTLE_VERSION = 1
 
 # Release homebrew version if new version is found on PYPI.

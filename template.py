@@ -9,6 +9,7 @@ BREW_TEMPLATE = """class Figgy < Formula
         rebuild %%BOTTLE_VERSION%%
         sha256 "%%SHA%%" => :catalina
         sha256 "%%SHA%%" => :mojave
+        sha256 "%%SHA%%" => :big_sur
     end
 
   # depends_on "cmake" => :build

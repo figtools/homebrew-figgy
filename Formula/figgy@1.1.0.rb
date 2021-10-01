@@ -9,6 +9,8 @@ class FiggyAT110 < Formula
         rebuild 1
         sha256 "f513e351e40b9511258e22f8537e699f559d69adb38e9bd1f3fc4181402a5de2" => :catalina
         sha256 "f513e351e40b9511258e22f8537e699f559d69adb38e9bd1f3fc4181402a5de2" => :mojave
+        sha256 "f513e351e40b9511258e22f8537e699f559d69adb38e9bd1f3fc4181402a5de2" => :big_sur
+
     end
 
   # depends_on "cmake" => :build

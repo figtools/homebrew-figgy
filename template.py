@@ -1,5 +1,5 @@
 BREW_TEMPLATE = """class Figgy < Formula
-    desc "This is the CLI that accompanies the `figgy` configuration management framework."
+    desc "This is the CLI that accompanies the 'figgy' configuration management framework."
     homepage "https://figgy.dev"
     url "%%URL%%"
     sha256 "%%SHA%%"
@@ -11,9 +11,7 @@ BREW_TEMPLATE = """class Figgy < Formula
         sha256 "%%SHA%%" => :mojave
         sha256 "%%SHA%%" => :big_sur
     end
-
-  # depends_on "cmake" => :build
-
+    
     def install
         puts "installing"
     end

@@ -7,9 +7,9 @@ BREW_TEMPLATE = """class Figgy < Formula
     bottle do
         root_url "https://www.figgy.dev/bottles"
         rebuild %%BOTTLE_VERSION%%
-        sha256 "%%SHA%%" => :catalina
-        sha256 "%%SHA%%" => :mojave
-        sha256 "%%SHA%%" => :big_sur
+        sha256 catalina: "%%SHA%%"
+        sha256 mojave: "%%SHA%%"
+        sha256 big_sur: "%%SHA%%"
     end
     
     def install

@@ -1,22 +1,22 @@
 class Figgy < Formula
-  desc "This is the CLI that accompanies the 'figgy' configuration management framework"
-  homepage "https://figgy.dev"
-  url "https://www.figgy.dev/releases/cli/1.2.2/darwin/figgy.tar.gz"
-  sha256 "401cbb438817f8b235ada19cc86d2f9f8c615d47138cede9213fc76244f16b3b"
-
-  bottle do
-    root_url "https://www.figgy.dev/bottles"
-    rebuild 1
-    sha256 catalina: "401cbb438817f8b235ada19cc86d2f9f8c615d47138cede9213fc76244f16b3b"
-    sha256 mojave:   "401cbb438817f8b235ada19cc86d2f9f8c615d47138cede9213fc76244f16b3b"
-    sha256 big_sur:  "401cbb438817f8b235ada19cc86d2f9f8c615d47138cede9213fc76244f16b3b"
-  end
-
-  def install
-    puts "installing"
-  end
-
-  test do
-    system "#{bin}/figgy", "--version"
-  end
+    desc "This is the CLI that accompanies the 'figgy' configuration management framework."
+    homepage "https://figgy.dev"
+    url "https://www.figgy.dev/releases/cli/1.2.3/darwin/figgy.tar.gz"
+    sha256 "0713bcbde0d3ac82842657e8c41ee14bea0288929cb2f2283c9165b8980e8e05"
+    
+    bottle do
+        root_url "https://www.figgy.dev/bottles"
+        rebuild 1
+        sha256 "0713bcbde0d3ac82842657e8c41ee14bea0288929cb2f2283c9165b8980e8e05" => :catalina
+        sha256 "0713bcbde0d3ac82842657e8c41ee14bea0288929cb2f2283c9165b8980e8e05" => :mojave
+        sha256 "0713bcbde0d3ac82842657e8c41ee14bea0288929cb2f2283c9165b8980e8e05" => :big_sur
+    end
+    
+    def install
+        puts "installing"
+    end
+    
+    test do
+        system "#{bin}/figgy", "--version"
+    end
 end

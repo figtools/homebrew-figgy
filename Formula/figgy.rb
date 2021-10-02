@@ -7,9 +7,9 @@ class Figgy < Formula
     bottle do
         root_url "https://www.figgy.dev/bottles"
         rebuild 1
-        digest "0713bcbde0d3ac82842657e8c41ee14bea0288929cb2f2283c9165b8980e8e05" => :catalina
-        digest "0713bcbde0d3ac82842657e8c41ee14bea0288929cb2f2283c9165b8980e8e05" => :mojave
-        digest "0713bcbde0d3ac82842657e8c41ee14bea0288929cb2f2283c9165b8980e8e05" => :big_sur
+        Digest "0713bcbde0d3ac82842657e8c41ee14bea0288929cb2f2283c9165b8980e8e05" => :catalina
+        Digest "0713bcbde0d3ac82842657e8c41ee14bea0288929cb2f2283c9165b8980e8e05" => :mojave
+        Digest "0713bcbde0d3ac82842657e8c41ee14bea0288929cb2f2283c9165b8980e8e05" => :big_sur
     end
     
     def install

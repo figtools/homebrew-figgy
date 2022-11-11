@@ -1,15 +1,15 @@
 class Figgy < Formula
     desc "This is the CLI that accompanies the 'figgy' configuration management framework."
     homepage "https://figgy.dev"
-    url "https://www.figgy.dev/releases/cli/1.2.6/darwin/figgy.tar.gz"
-    sha256 "641ccb2c684e155fb22669a194d167b214933f4707285c43a060b7d0fa012e05"
+    url "https://www.figgy.dev/releases/cli/1.2.7/darwin/figgy.tar.gz"
+    sha256 "9043cff87a1c7602e8ff85ccdc4aa3cf73b510fa52edf2b60a0302d9b570d072"
     
     bottle do
         root_url "https://www.figgy.dev/bottles"
         rebuild 1
-        sha256 cellar: :any_skip_relocation, catalina: "641ccb2c684e155fb22669a194d167b214933f4707285c43a060b7d0fa012e05"
-        sha256 cellar: :any_skip_relocation, mojave: "641ccb2c684e155fb22669a194d167b214933f4707285c43a060b7d0fa012e05"
-        sha256 cellar: :any_skip_relocation, big_sur: "641ccb2c684e155fb22669a194d167b214933f4707285c43a060b7d0fa012e05"
+        sha256 cellar: :any_skip_relocation, catalina: "9043cff87a1c7602e8ff85ccdc4aa3cf73b510fa52edf2b60a0302d9b570d072"
+        sha256 cellar: :any_skip_relocation, mojave: "9043cff87a1c7602e8ff85ccdc4aa3cf73b510fa52edf2b60a0302d9b570d072"
+        sha256 cellar: :any_skip_relocation, big_sur: "9043cff87a1c7602e8ff85ccdc4aa3cf73b510fa52edf2b60a0302d9b570d072"
     end
     
     def install
